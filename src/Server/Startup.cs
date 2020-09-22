@@ -83,8 +83,6 @@ namespace Blog.Server
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
             });
-
-            
         }
     }
 }
