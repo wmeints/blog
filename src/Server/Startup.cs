@@ -65,9 +65,15 @@ namespace Blog.Server
 
             app.UseRouting();
 
-            app.UseIdentityServer();
             app.UseAuthentication();
+            app.UseIdentityServer();
             app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+            });
 
             app.Map("/Admin", admin => {
                 admin.UseBlazorFrameworkFiles();
@@ -76,12 +82,6 @@ namespace Blog.Server
                 {
                     endpoints.MapFallbackToPage("/Admin");
                 });
-            });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
-                endpoints.MapControllers();
             });
         }
     }

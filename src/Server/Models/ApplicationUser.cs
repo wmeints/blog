@@ -8,5 +8,9 @@ namespace Blog.Server.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        public string ProfileImage { get; set; }
+        public string Biography { get; set; }
+        public string TwitterAccount { get; set; }
+        public string LinkedInAccount { get; set; }
     }
 }
